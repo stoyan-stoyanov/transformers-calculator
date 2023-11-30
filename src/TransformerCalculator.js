@@ -55,6 +55,12 @@ function TransformerCalculator() {
         // Format the results and set the state
         const formattedResult = formatSetupResults(numGpus, numTflops, numParameters, numTokens, days);
         setResult(formattedResult);
+
+        // Scroll to the bottom of the page
+        window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: 'smooth'
+        });
       };
 
   return (
