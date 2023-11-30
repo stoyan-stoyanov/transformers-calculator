@@ -70,7 +70,7 @@ function TransformerCalculator() {
                 <Image className="github-logo" src={require("./GitHub_Logo.png")}/>
             </a>
             <Row>
-                <h1>👾 Transformer Calculator</h1>
+                <h1>👾 Transformers Calculator</h1>
             </Row>
             <Row>
                 <Col>
