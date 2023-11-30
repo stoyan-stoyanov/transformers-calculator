@@ -12,8 +12,14 @@
 }
   
 .github-logo {
-position: absolute;
-top: 15px;
-right: 15px;
-height: 40px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    height: 40px;
+}
+
+.toggle-theme {
+    position: absolute;
+    top: 15px;
+    right: 120px;
 }

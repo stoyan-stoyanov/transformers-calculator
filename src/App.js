@@ -4,7 +4,7 @@ import TransformerCalculator from './TransformerCalculator'; // Import the Trans
 function App() {
   return (
     <div className="App">
-      <TransformerCalculator /> {/* This includes your TransformerCalculator component in the app */}
+      <TransformerCalculator />
     </div>
   );
 }

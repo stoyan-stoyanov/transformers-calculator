@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './TransformerCalculator.css';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -8,8 +8,11 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
+import GitHubLogoLight from './GitHub_Logo.png';
+import GitHubLogoDark from './GitHub_Logo_White.png';
 
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 
 function TransformerCalculator() {
@@ -18,10 +21,29 @@ function TransformerCalculator() {
     const [parameters, setParameters] = useState('');
     const [tokens, setTokens] = useState('');
     const [result, setResult] = useState('');
+    const [theme, setTheme] = useState('null');
+    const githubLogo = theme === 'light' ? GitHubLogoLight : GitHubLogoDark;
+
+    useEffect(() => {
+        // Set the initial theme based on the user's system preference
+        const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        setTheme(prefersDarkMode ? 'dark' : 'light');
+    }, []);
+
+    useEffect(() => {
+        // Update the theme on the HTML element whenever the theme state changes
+        if (theme) {
+        document.documentElement.setAttribute('data-bs-theme', theme);
+        }
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme(theme === 'light' ? 'dark' : 'light');
+    };
   
     const totalComputeRequired = (bp, bt, nGpus) => {
-      const c = nGpus > 1 ? 8 : 6;
-      return c * bp * 1e9 * bt * 1e9;
+        const c = nGpus > 1 ? 8 : 6;
+        return c * bp * 1e9 * bt * 1e9;
     };
 
     const totalTrainingDays = (tc, gpuFlops, nGpus) => {
@@ -29,7 +51,7 @@ function TransformerCalculator() {
     };
 
     const formatSetupResults = (nGpus, gpuFlops, bParameters, bTokens, days) => {
-        const gpuText = nGpus === 1 ? 'GPU' : 'GPUs'; // Determine whether to use singular or plural
+        const gpuText = nGpus === 1 ? 'GPU' : 'GPUs';
       
         const response = (
           <span>
@@ -66,8 +88,12 @@ function TransformerCalculator() {
   return (
     <div className='transformer-calculator'>
         <Container>
+            <Button className="toggle-theme" onClick={toggleTheme} variant="outline-secondary">
+            	
+            {theme === 'light' ? <i class="bi bi-moon-stars"></i> : <i class="bi bi-sun-fill"></i>}
+            </Button>
             <a href="https://github.com/stoyan-stoyanov/transformers-calculator" target="_blank" rel="noopener noreferrer">
-                <Image className="github-logo" src={require("./GitHub_Logo.png")}/>
+                <Image className="github-logo" src={githubLogo}/>
             </a>
             <Row>
                 <h1>👾 Transformers Calculator</h1>
