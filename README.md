@@ -1,4 +1,4 @@
-# 👾 gTransformers Calculator
+# 👾 Transformers Calculator
 
 Live demo available here: https://transformers-calculator.vercel.app
 
