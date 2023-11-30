@@ -1,6 +1,6 @@
-# 👾 Transformers Calculator
+# 👾 gTransformers Calculator
 
-Live demo available here: https://transformers-calculator.vercel.appg
+Live demo available here: https://transformers-calculator.vercel.app
 
 ## Introduction
 Transformer Calculator is a web application designed to estimate the training time for transformer models based on various input parameters. It's built using React and React Bootstrap, and it is inspired from this [blog post](https://medium.com/@dzmitrybahdanau/the-flops-calculus-of-language-model-training-3b19c1f025e4).
