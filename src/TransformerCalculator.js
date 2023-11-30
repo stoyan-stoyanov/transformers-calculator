@@ -23,7 +23,7 @@ function TransformerCalculator() {
       const c = nGpus > 1 ? 8 : 6;
       return c * bp * 1e9 * bt * 1e9;
     };
-  
+
     const totalTrainingDays = (tc, gpuFlops, nGpus) => {
       return tc / (nGpus * gpuFlops) / 86400;
     };
@@ -40,8 +40,6 @@ function TransformerCalculator() {
       
         return response;
       };
-      
-      
 
     const calculateTime = () => {
         // Ensure the input values are numbers and handle any potential errors
