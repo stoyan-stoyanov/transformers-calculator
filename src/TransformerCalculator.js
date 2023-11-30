@@ -77,7 +77,7 @@ function TransformerCalculator() {
                     <Card className='box'>
                         <Card.Body>
                             <Card.Text>
-                                ℹ️ This is a simple calculator tool that can help you get an idea on how much time it would take to train a transformer model. The calculator uses the equations from <a href="https://medium.com/@dzmitrybahdanau/the-flops-calculus-of-language-model-training-3b19c1f025e4">this</a> blog post.
+                                ℹ️ This is a simple calculator tool that can help you get an idea of how much time it would take to train a transformer model. The calculator uses the equations from <a href="https://medium.com/@dzmitrybahdanau/the-flops-calculus-of-language-model-training-3b19c1f025e4">this</a> blog post.
                             </Card.Text>
                         </Card.Body>
                     </Card>
